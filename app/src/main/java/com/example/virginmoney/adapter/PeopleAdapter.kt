@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.virginmoney.R
 import com.example.virginmoney.databinding.PeopleRowViewBinding
 import com.example.virginmoney.model.PeopleResponseItem
+import com.squareup.picasso.Picasso
 
 class PeopleAdapter(private val peopleList: MutableList<PeopleResponseItem> = mutableListOf()): RecyclerView.Adapter<PeopleAdapter.PeopleViewHolder>() {
 
@@ -30,10 +32,14 @@ class PeopleAdapter(private val peopleList: MutableList<PeopleResponseItem> = mu
     }
 
     class PeopleViewHolder(private val bindings: PeopleRowViewBinding): RecyclerView.ViewHolder(bindings.root){
-            fun bind(peoples: PeopleResponseItem){
-                bindings.nametxt.text = peoples.name
-                bindings.emailtxt.text = peoples.email
-                bindings.addresstxt.text = peoples.address.toString()
-            }
+        fun bind(peoples: PeopleResponseItem){
+            bindings.nametxt.text = peoples.firstName
+            bindings.emailtxt.text = peoples.email
+            bindings.addresstxt.text = peoples.email
+            Picasso.get()
+                .load(peoples.avatar)
+                .placeholder(R.mipmap.ic_launcher)
+                .into(bindings.albumimage)
+        }
     }
 }
