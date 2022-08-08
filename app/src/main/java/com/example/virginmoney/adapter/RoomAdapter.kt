@@ -1,7 +1,11 @@
 package com.example.virginmoney.adapter
 
+import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.compose.ui.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
 import com.example.virginmoney.R
 import com.example.virginmoney.databinding.RoomRowViewBinding
@@ -31,11 +35,16 @@ class RoomAdapter(private val roomList: MutableList<RoomResponseItem> = mutableL
         return roomList.size
     }
 
-    class RoomViewHolder(private val bindings: RoomRowViewBinding): RecyclerView.ViewHolder(bindings.root){
+    class RoomViewHolder(private var bindings: RoomRowViewBinding): RecyclerView.ViewHolder(bindings.root){
+        @SuppressLint("ResourceAsColor")
         fun bind(room: RoomResponseItem){
             bindings.title.text = room.name
             bindings.thumbnailUrl.text = room.created_at
-            bindings.url.text = room.is_occupied.toString()
+            if(room.is_occupied) {
+                bindings.cardbg.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.red));
+            }else{
+                bindings.cardbg.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.green));
+            }
         }
     }
 }
