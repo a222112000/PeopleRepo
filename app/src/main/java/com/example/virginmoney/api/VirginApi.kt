@@ -6,13 +6,13 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface VirginApi {
-    @GET("photos")
+    @GET("rooms")
     suspend fun getRooms():Response<RoomResponse>
 
-    @GET("users")
+    @GET("people")
     suspend fun getPeople(): Response<PeopleResponse>
 
     companion object{
-        const val BASE_URL ="https://jsonplaceholder.typicode.com/"
+        const val BASE_URL ="https://61d6afbe35f71e0017c2e74b.mockapi.io/api/v1/"
     }
 }

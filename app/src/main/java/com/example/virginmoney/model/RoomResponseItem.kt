@@ -1,9 +1,9 @@
 package com.example.virginmoney.model
 
 data class RoomResponseItem(
-    val albumId: Int,
-    val id: Int,
-    val thumbnailUrl: String,
-    val title: String,
-    val url: String
+    val created_at: String,
+    val id: String,
+    val is_occupied: Boolean,
+    val max_occupancy: Int,
+    val name: String
 )
