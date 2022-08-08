@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.virginmoney.R
-import com.example.virginmoney.databinding.PeopleRowViewBinding
 import com.example.virginmoney.databinding.RoomRowViewBinding
 import com.example.virginmoney.model.RoomResponseItem
 import com.squareup.picasso.Picasso
@@ -34,11 +33,11 @@ class RoomAdapter(private val roomList: MutableList<RoomResponseItem> = mutableL
     class RoomViewHolder(private val bindings: RoomRowViewBinding): RecyclerView.ViewHolder(bindings.root){
         fun bind(room: RoomResponseItem){
             bindings.title.text = room.title
-            bindings.thumbnailUrl.text = room.thumbnailUrl
+            bindings.thumbnailUrl.text = room.url
             bindings.url.text = room.url
             Picasso.get()
                 .load(room.thumbnailUrl)
-                .placeholder(R.drawable.ic_baseline_meeting_room_24)
+                .placeholder(R.mipmap.ic_launcher)
                 .into(bindings.albumimage)
         }
     }
