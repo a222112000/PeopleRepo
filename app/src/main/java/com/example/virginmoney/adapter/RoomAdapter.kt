@@ -9,7 +9,8 @@ import com.example.virginmoney.databinding.RoomRowViewBinding
 import com.example.virginmoney.model.RoomResponseItem
 import com.squareup.picasso.Picasso
 
-class RoomAdapter(private val roomList: MutableList<RoomResponseItem> = mutableListOf()): RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
+class RoomAdapter(private val roomList: MutableList<RoomResponseItem> = mutableListOf()):
+    RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
 
     fun setRoom( room: MutableList<RoomResponseItem>){
         roomList.clear()
