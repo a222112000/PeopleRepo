@@ -4,9 +4,7 @@
 
 
 
-</td><td><img width="394" alt="Screenshot 2022-08-08 at 12 17 38" src="https://user-images.githubusercontent.com/26028054/183406412-4bcd64ec-2793-4f8e-958d-26935cc74865.png">
-
-
+</td><td><img width="375" alt="Screenshot 2022-08-08 at 14 12 21" src="https://user-images.githubusercontent.com/26028054/183426139-d80f7882-ece7-48ba-9110-e9c3d8e187c9.png">
 </td>
 </tr></table>
 #MVVM
