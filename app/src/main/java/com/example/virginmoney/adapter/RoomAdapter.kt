@@ -32,13 +32,9 @@ class RoomAdapter(private val roomList: MutableList<RoomResponseItem> = mutableL
 
     class RoomViewHolder(private val bindings: RoomRowViewBinding): RecyclerView.ViewHolder(bindings.root){
         fun bind(room: RoomResponseItem){
-            bindings.title.text = room.title
-            bindings.thumbnailUrl.text = room.url
-            bindings.url.text = room.url
-            Picasso.get()
-                .load(room.thumbnailUrl)
-                .placeholder(R.mipmap.ic_launcher)
-                .into(bindings.albumimage)
+            bindings.title.text = room.name
+            bindings.thumbnailUrl.text = room.created_at
+            bindings.url.text = room.is_occupied.toString()
         }
     }
 }
