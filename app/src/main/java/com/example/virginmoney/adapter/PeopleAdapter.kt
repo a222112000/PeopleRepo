@@ -35,7 +35,8 @@ class PeopleAdapter(private val peopleList: MutableList<PeopleResponseItem> = mu
         fun bind(peoples: PeopleResponseItem){
             bindings.nametxt.text = peoples.firstName
             bindings.emailtxt.text = peoples.email
-            bindings.addresstxt.text = peoples.email
+            bindings.addresstxt.text = peoples.jobTitle
+            bindings.phonetxt.text = peoples.phone
             Picasso.get()
                 .load(peoples.avatar)
                 .placeholder(R.mipmap.ic_launcher)
